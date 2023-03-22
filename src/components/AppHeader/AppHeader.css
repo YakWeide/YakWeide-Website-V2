@@ -1,0 +1,36 @@
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background-color: #eee;
+    justify-content: space-around;
+    padding: 0px 20px;
+    top: 0;
+    z-index: 3;
+}
+
+#header-img {
+    height: 75px;
+    margin-right: auto;
+}
+
+#nav-bar {
+    margin: 25px 0 0 auto;
+}
+
+#nav-bar > ul {
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
