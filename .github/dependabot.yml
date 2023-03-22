@@ -9,13 +9,3 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-
-# Define the events that will trigger Dependabot
-# In this example, the workflow will run on push events to the default branch
-# and on a daily schedule
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "0 0 * * *"
