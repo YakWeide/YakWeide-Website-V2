@@ -1,18 +1,21 @@
 .wrapper {
     display: flex;
     height: calc(100vh - 80px);
+    position: relative;
 }
 
 .main-section {
     flex: 1;
     background-color: lightblue;
     padding: 20px;
+    position: relative;
 }
 
 #site-panel-control {
     display: flex;
     align-items: center;
     background-color: #2f3136;
+    overflow: hidden;
 }
 
 .side-panel {
@@ -33,6 +36,16 @@
 }
 
 .toggle-btn {
-    display: block;
-    margin: 10px 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -20px;
+    width: 20px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,8 +1,28 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './main.css';
+import arrow_left from "../../assets/arrow_right.png"
+import arrow_right from "../../assets/arrow_left.png"
 
 const Main = () => {
-    const [showSidePanel, setShowSidePanel] = useState(false);
+    const [showSidePanel, setShowSidePanel] = useState(() => {
+        return window.innerWidth >= 1000;
+    });
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1000) {
+                setShowSidePanel(true);
+            } else {
+                setShowSidePanel(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleSidePanelToggle = () => {
         setShowSidePanel(!showSidePanel);
@@ -16,7 +36,11 @@ const Main = () => {
             </div>
             <div id="site-panel-control">
                 <button className="toggle-btn" onClick={handleSidePanelToggle}>
-                    {showSidePanel ? 'Hide' : 'Show'} Panel
+                    <img
+                        src={showSidePanel ? arrow_left : arrow_right}
+                        alt={showSidePanel ? '>' : '<'}
+                        style={{ width: '20px', height: '20px' }}
+                    />
                 </button>
                 <div className={`side-panel${showSidePanel ? ' expanded' : ''}`}>
                     <iframe
