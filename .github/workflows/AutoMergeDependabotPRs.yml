@@ -3,6 +3,9 @@ name: Auto Merge Dependabot PRs
 on:
   pull_request:
     types: [opened, synchronize]
+    branches:
+      - 'dependabot/**'
+
 
 jobs:
   auto_merge:
