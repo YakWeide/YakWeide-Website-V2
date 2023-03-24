@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import './main.css';
 
 const Main = () => {
-    const [showSidePanel, setShowSidePanel] = useState(false);
+    const [showSidePanel, setShowSidePanel] = useState(() => {
+        return window.innerWidth >= 768;
+    });
 
     const handleSidePanelToggle = () => {
         setShowSidePanel(!showSidePanel);
@@ -16,7 +18,10 @@ const Main = () => {
             </div>
             <div id="site-panel-control">
                 <button className="toggle-btn" onClick={handleSidePanelToggle}>
-                    {showSidePanel ? 'Hide' : 'Show'} Panel
+                    <img
+                        src={showSidePanel ? '/images/left-arrow.svg' : '/images/right-arrow.svg'}
+                        alt={showSidePanel ? 'Hide Panel' : 'Show Panel'}
+                    />
                 </button>
                 <div className={`side-panel${showSidePanel ? ' expanded' : ''}`}>
                     <iframe
