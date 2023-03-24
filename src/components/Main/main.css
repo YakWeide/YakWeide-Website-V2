@@ -13,18 +13,18 @@
     display: flex;
     align-items: center;
     background-color: #2f3136;
-    overflow: hidden;
+    position: fixed;
+    right: 0;
+    height: calc(100vh - 80px);
 }
 
 .side-panel {
     width: 0;
     height: 100%;
-    transition: width 0.5s ease-in-out;
-    overflow-y: auto;
+    transition: width 0.4s ease-in-out;
     flex: 1;
-    position: fixed; /* add this line */
-    right: 0; /* add this line */
-    top: 0; /* add this line */
+    background-color: #7289da;
+    overflow: hidden;
 }
 
 #iFrame {
@@ -40,8 +40,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: -20px;
-    width: 20px;
+    margin-left: -25px;
+    width: 25px;
     height: 80px;
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
