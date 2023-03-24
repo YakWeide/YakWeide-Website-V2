@@ -19,7 +19,7 @@ jobs:
           tags: ghcr.io/yakweide/yakweide-website-v2:latest
       - name: Run React Tests
         run: |
-          docker run --rm -p 3000:3000 --name my-app ghcr.io/yakweide/yakweide-website-v2:latest sh -c "npm run test -- --watchAll=false"
+          docker run --rm -p 3000:3000 --name my-app ghcr.io/yakweide/yakweide-website-v2:latest sh -c "npm run test --watchAll=false"
           TEST_EXIT_CODE=$?
           docker stop my-app
           echo "::set-output name=exit_code::$TEST_EXIT_CODE"
