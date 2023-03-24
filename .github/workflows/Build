@@ -1,8 +1,7 @@
-name: Build Docker Image
-
 on:
   pull_request_target:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
@@ -11,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Build Docker Image
         uses: docker/build-push-action@v2
         with:
