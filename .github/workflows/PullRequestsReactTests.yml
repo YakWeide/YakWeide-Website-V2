@@ -1,9 +1,4 @@
 on:
-  # Trigger the workflow for pull requests from your own repository
-  pull_request:
-    branches:
-      - main
-  # Trigger the workflow for pull requests from forked repositories
   pull_request_target:
     branches:
       - main
@@ -22,3 +17,12 @@ jobs:
           context: .
           push: false
           tags: ghcr.io/yakweide/yakweide-website-v2:latest
+      - name: Run React Tests
+        run: |
+          docker run --rm -it -d -p 3000:3000 --name my-app ghcr.io/yakweide/yakweide-website-v2:latest
+          docker exec my-app npm run test
+          TEST_EXIT_CODE=$?
+          docker stop my-app
+          exit $TEST_EXIT_CODE
+      - name: Check Test Results
+        run: exit ${{ jobs.build.steps[2].outputs.exit_code }}
