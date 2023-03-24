@@ -2,6 +2,7 @@ import React from 'react'
 import "./AppHeader.css"
 import logo from "../../assets/yakweide_logo_klein.png"
 
+// This is the header component of the app. It renders the logo and the navigation bar.
 function AppHeader() {
   return (
     <div>
@@ -13,7 +14,7 @@ function AppHeader() {
 
         <nav id="nav-bar">
           <ul>
-            <li><a className="nav-link" href="#Page1">Page1</a></li>
+            <li><a className="nav-link" href="#Page1">Page2</a></li>
             <li><a className="nav-link" href="#Page2">Page2</a></li>
             <li><a className="nav-link" href="#Page3">Page3</a></li>
             <li><a className="nav-link" href="/login">Login</a></li>

@@ -1,0 +1,52 @@
+.wrapper {
+    display: flex;
+    height: calc(100vh - 80px);
+    position: relative;
+}
+
+.main-section {
+    flex: 1;
+    position: relative;
+}
+
+#site-panel-control {
+    display: flex;
+    align-items: center;
+    background-color: #2f3136;
+    overflow: hidden;
+}
+
+.side-panel {
+    width: 0;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+    overflow-y: auto;
+    flex: 1;
+    position: fixed; /* add this line */
+    right: 0; /* add this line */
+    top: 0; /* add this line */
+}
+
+#iFrame {
+    height: 100%;
+    width: 100%;
+}
+
+.side-panel.expanded {
+    width: 300px;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -20px;
+    width: 20px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
