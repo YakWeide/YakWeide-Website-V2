@@ -6,8 +6,6 @@
 
 .main-section {
     flex: 1;
-    background-color: lightblue;
-    padding: 20px;
     position: relative;
 }
 
@@ -24,6 +22,9 @@
     transition: width 0.5s ease-in-out;
     overflow-y: auto;
     flex: 1;
+    position: fixed; /* add this line */
+    right: 0; /* add this line */
+    top: 0; /* add this line */
 }
 
 #iFrame {

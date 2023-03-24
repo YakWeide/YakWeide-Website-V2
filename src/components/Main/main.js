@@ -2,7 +2,10 @@ import React, {useEffect, useState} from 'react';
 import './main.css';
 import arrow_left from "../../assets/arrow_right.png"
 import arrow_right from "../../assets/arrow_left.png"
+import Page1 from "./Pages/Page1/Page1";
+import Page2 from "./Pages/Page2/Page2";
 
+// This is the main component of the app. It renders the Main Pages component and the SidePanel component.
 const Main = () => {
     const [showSidePanel, setShowSidePanel] = useState(() => {
         return window.innerWidth >= 1000;
@@ -30,9 +33,11 @@ const Main = () => {
 
     return (
         <div className="wrapper">
-            <div className="main-section" style={{ backgroundColor: 'lightblue' }}>
-                <h1>Hello World!</h1>
-                <p>This is a simple example of a colored background in the main section.</p>
+            <div className="main-section">
+                <main>
+                    <Page1 />
+                    <Page2 />
+                </main>
             </div>
             <div id="site-panel-control">
                 <button className="toggle-btn" onClick={handleSidePanelToggle}>
