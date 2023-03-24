@@ -23,6 +23,7 @@ jobs:
           docker exec my-app npm run test
           TEST_EXIT_CODE=$?
           docker stop my-app
-          exit $TEST_EXIT_CODE
+          echo "::set-output name=exit_code::$TEST_EXIT_CODE"
       - name: Check Test Results
-        run: exit ${{ jobs.build.steps[2].outputs.exit_code }}
+        run: exit ${{ steps.Run-React-Tests.outputs.exit_code }}
+
