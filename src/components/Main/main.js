@@ -42,7 +42,7 @@ const Main = () => {
             <div id="site-panel-control">
                 <button className="toggle-btn" onClick={handleSidePanelToggle}>
                     <img
-                        src={showSidePanel ? arrow_left : arrow_right}
+                        src={showSidePanel ? arrow_right : arrow_left}
                         alt={showSidePanel ? '>' : '<'}
                         style={{ width: '20px', height: '20px' }}
                     />
@@ -52,7 +52,7 @@ const Main = () => {
                         id="iFrame"
                         src="https://discord.com/widget?id=288665487993339904&theme=dark"
                         allowTransparency="true"
-                        frameBorder="0"
+                        style={{ border: 'none' }}
                         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                     />
                 </div>
